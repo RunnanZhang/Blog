@@ -48,7 +48,9 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  Lebron James: http://localhost:4000/
+  Lebron James: http://www.nba.hupu.com/
+  公孙二狗: http://xture.github.io/
+  QtBook: http://qtdebug.com/
 
 #是否开启“关于我”。
 #不开启——
