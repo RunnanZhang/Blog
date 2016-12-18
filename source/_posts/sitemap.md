@@ -10,10 +10,10 @@ tags: Index
 
 ## Encoding
 * [程序编译过程中编码作用](/encoding-compile)
-* [编码与'编码'](encoding)
+* [编码与'编码'](/encoding)
 
 ## Git
-* [Git中使远程仓库覆盖本地](git-reset)
+* [Git中使远程仓库覆盖本地](/git-reset)
 
 ## Qt
 * [QDesigner中验证QSS格式是否有效](/qt-validate-style)
