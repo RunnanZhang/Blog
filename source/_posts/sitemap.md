@@ -20,7 +20,9 @@ tags: Index
 
 ## Qt
 * [QDesigner中验证QSS格式是否有效的方法](/qt-validate-style)
+* [Windows设置程序开机启动](/windows-auto-start)
 * [Windows注册全局热键](/windows-global-hotkey)
 
 ## Windows
+* [Windows设置程序开机启动](/windows-auto-start)
 * [Windows注册全局热键](/windows-global-hotkey)
