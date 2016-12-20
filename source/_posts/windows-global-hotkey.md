@@ -1,7 +1,7 @@
 ---
 title: Windows注册全局热键
 date: 2016-12-16 21:30:12
-tags: [Windows, Qt]
+tags: Windows
 ---
 
 说起热键，大家一定不陌生，程序的热键有两种：

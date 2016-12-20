@@ -19,10 +19,11 @@ tags: Index
 * [All Documents](/sitemap)
 
 ## Qt
+* [Qt中设置程序UAC启动权限](/qt-set-uac)
 * [QDesigner中验证QSS格式是否有效的方法](/qt-validate-style)
 * [Windows设置程序开机启动](/windows-auto-start)
-* [Windows注册全局热键](/windows-global-hotkey)
 
 ## Windows
+* [Qt中设置程序UAC启动权限](/qt-set-uac)
 * [Windows设置程序开机启动](/windows-auto-start)
 * [Windows注册全局热键](/windows-global-hotkey)
