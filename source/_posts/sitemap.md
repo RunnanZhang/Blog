@@ -6,6 +6,7 @@ tags: Index
 
 
 ## Compile
+* [程序编译的四部曲](/compile-process)
 * [程序编译过程中编码的作用](/encoding-compile)
 
 ## Encoding
