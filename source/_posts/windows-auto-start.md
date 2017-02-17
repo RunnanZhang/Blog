@@ -36,3 +36,9 @@ void MagicAssistant::autoStart(bool is_start)
     }
 }
 ```
+
+## 启动路径
+
+windows自启动程序的默认启动路径为`system32`或者`system64`文件夹，而非exe所在目录，所以我们程序中使用相对路径时一定要注意，在程序开始可通过设置当前路径解决此问题。
+
+`QDir::setCurrent(a.applicationDirPath());`
