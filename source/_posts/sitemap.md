@@ -5,6 +5,9 @@ tags: Index
 ---
 
 
+## C++
+* [PImpl机制以及Qt的D-Pointer实现](/cpp-pimpl)
+
 ## Compile
 * [程序编译的四部曲](/compile-process)
 * [程序编译过程中编码的作用](/encoding-compile)
@@ -20,6 +23,8 @@ tags: Index
 * [All Documents](/sitemap)
 
 ## Qt
+* [PImpl机制以及Qt的D-Pointer实现](/cpp-pimpl)
+* [Qt中设置透明度](/qt-set-opacity)
 * [Qt中设置程序UAC启动权限](/qt-set-uac)
 * [QDesigner中验证QSS格式是否有效的方法](/qt-validate-style)
 * [Windows设置程序开机启动](/windows-auto-start)
