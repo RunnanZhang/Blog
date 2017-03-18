@@ -6,6 +6,7 @@ tags: Index
 
 
 ## C++
+* [C++的二进制兼容](/cpp-binary-compatibility)
 * [PImpl机制以及Qt的D-Pointer实现](/cpp-pimpl)
 
 ## Compile
