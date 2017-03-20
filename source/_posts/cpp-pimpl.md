@@ -115,7 +115,7 @@ template <typename Wrapper> static inline typename Wrapper::pointer qGetPtrHelpe
 
 那在`d_func()`中，我们为什么不直接使用`d_ptr` ，而要借助`qGetPtrHelper()`函数呢？其实利用这个函数，就是为了**适配我们使用智能指针的情况**，因为此时我们要拿到真正的指针，需要调用`d_ptr.data()`。
 
-`Q_D`宏进行再次封装，让我们可以方便的拿到d指针，此指针即为我们想要的`d_ptr`。此宏的封装也是为了我们使用const的方便，我们可以通过`Q_D(const Person)`拿到const指针，从而进行只读操作，进而控制程序的正确性。
+`Q_D`宏进行再次封装，让我们可以免去每次定义的繁琐，直接拿到`d`指针，此指针即为我们想要的`d_ptr`。有时我们仅想只读私有类的属性，我们可通过`Q_D(const Person)`拿到`const`指针，此时调用的是返回`const*`的`d_func()`函数。
 
 
 ### Q_DECLARE_PUBLIC、Q_Q
