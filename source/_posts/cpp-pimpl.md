@@ -38,7 +38,7 @@ signals:
     void calcRequested();
 
 private:
-    QScopedPointer<QObjectData> d_ptr;
+    QScopedPointer<PersonPrivate> d_ptr;
 };
 ```
 
@@ -49,7 +49,7 @@ private:
 
 class PersonPrivate
 {
-    Q_DECLARE_PUBLIC(PersonPrivate)
+    Q_DECLARE_PUBLIC(Person)
 
 public:
     PersonPrivate(Person *parent);
