@@ -33,4 +33,5 @@ tags: Index
 ## Windows
 * [Qt中设置程序UAC启动权限](/qt-set-uac)
 * [Windows设置程序开机启动](/windows-auto-start)
+* [Windows打开资源管理器并选中文件](/windows-explorer-select)
 * [Windows注册全局热键](/windows-global-hotkey)
