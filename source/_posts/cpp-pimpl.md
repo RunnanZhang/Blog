@@ -32,7 +32,10 @@ class Person
     Q_DECLARE_PRIVATE(Person)
 
 public:
-    QString name();
+    Person();
+    ~Person();
+    QString name() const;
+    void setName(const QString &name);
 
 signals:
     void calcRequested();
@@ -73,11 +76,19 @@ Person::Person() : d_ptr(new PersonPrivate(this))
 
 }
 
-Person::name()
+~Person() {}
+
+QString Person::name() const
 {
-    Q_D(Person);
+    Q_D(const Person);
 
     return d->name;
+}
+
+void Person::setName(const QString &name)
+{
+    Q_D(const Person);
+    d->name = name;
 }
 
 PersonPrivate::PersonPrivate(Person *parent) : q_ptr(parent)
@@ -111,11 +122,13 @@ template <typename Wrapper> static inline typename Wrapper::pointer qGetPtrHelpe
 #define Q_D(Class) Class##Private * const d = d_func()
 ```
 
-其实`Q_DECLARE_PRIVATE`看似复杂，其实就是一层封装，目的就是让我们可以方便地拿到并使用私有类指针`d_ptr` 。利用`d_func()`函数，可以避免我们每次直接拿到`d_ptr`然后自己进行类型转换（因为我们有可能会在子类中使用此方法，具体我们将在后面的拓展中详述）。
+`Q_DECLARE_PRIVATE`看似复杂，其实就是封装了`d_func()`函数，目的就是让我们在多种不同情况下，可以方便地拿到并使用私有类指针`d_ptr` 。`Q_D`宏对`d_func()`进行再次封装，让我们可以免去每次定义的繁琐，直接使用`d`指针，此指针即为我们想要的`d_ptr`。下面我们进行更详细的理解以及相关注意事项：
 
-那在`d_func()`中，我们为什么不直接使用`d_ptr` ，而要借助`qGetPtrHelper()`函数呢？其实利用这个函数，就是为了**适配我们使用智能指针的情况**，因为此时我们要拿到真正的指针，需要调用`d_ptr.data()`。
-
-`Q_D`宏进行再次封装，让我们可以免去每次定义的繁琐，直接拿到`d`指针，此指针即为我们想要的`d_ptr`。有时我们仅想只读私有类的属性，我们可通过`Q_D(const Person)`拿到`const`指针，此时调用的是返回`const*`的`d_func()`函数。
+* 利用`d_func()`函数，可以避免我们每次直接拿`d_ptr`指针进行类型转换（因为我们有可能会在子类中使用此方法，具体我们将在后面的拓展中详述）。
+* 在`d_func()`中，我们为什么不直接使用`d_ptr` ，而要借助`qGetPtrHelper()`函数呢？利用此函数，是为了**适配我们使用智能指针的情况**，因为此时我们要拿到真正的指针，需要调用`d_ptr.data()`。
+* 在`const`函数中使用`Q_D`，此时将调用`d_func()`的`const`版本，我们必须要利用`Q_D(const Person)`这种写法拿到正确的`const`指针（否则会提示无法转换）。这样封装也间接保证了程序的正确性，而不是直接拿到`d_ptr`指针进行操作 。
+* `d_ptr`的定义是要放在暴露给用户的头文件中，如此命名有时会打破我们的命名规范，此时可以利用`Q_DECLARE_PRIVATE_D(m_dPtr, Person)`这个宏来进行自定义的命名。看到这个宏，我们不得不感慨Qt封装的细致得当。
+* 既然上面提到了使用智能指针，这里多说几句，我们利用**前置声明的方式**来使用`QScopedPointer`时，我们必须要有非内联的构造、析构、赋值运算符。即不可以用默认生成的。具体可参见`QScopedPointer`文档中的`Forward Declared Pointers`部分。
 
 
 ### Q_DECLARE_PUBLIC、Q_Q
