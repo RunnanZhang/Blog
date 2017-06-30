@@ -23,7 +23,7 @@ tags: [C++, Qt]
 
 ## Qt中D-Pointer的实现
 
-* Psrson.h
+* Person.h
 
 ```cpp
 class PersonPrivate;
