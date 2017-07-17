@@ -21,6 +21,7 @@ QScrollBar:horizontal {
     height: 8px;
     background: #f0f0f0;
 }
+
 QScrollBar::handle:vertical {
     background: #cdcdcd;
     min-height: 30px;
@@ -29,15 +30,18 @@ QScrollBar::handle:horizontal {
     background: #cdcdcd;
     min-width: 30px;
 }
+
 QScrollBar::handle:vertical:hover,
 QScrollBar::handle:horizontal:hover {
     background: #a6a6a6;
 }
+
 QScrollBar::sub-line:vertical, QScrollBar::add-line:vertical,
 QScrollBar::sub-line:horizontal, QScrollBar::add-line:horizontal {
     width: 0;
     height: 0;
 }
+
 /*make sure the background is solid style.*/
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical,
 QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
@@ -56,11 +60,13 @@ QScrollBar:vertical {
     background: white;
     width: 8px;
 }
+
 QScrollBar::handle:vertical {
     min-height: 40px;
     border-width: 0px 4px 0px 4px;
     border-image: url(:/images/scrollbar.png) 0 4 0 4 repeat repeat;
 }
+
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     width: 8px;
     border-width: 0px 4px 0px 4px;
@@ -70,7 +76,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 
 ## 默认隐藏滚动条
 
-现代风格的软件中，很多情况下滚动条默认是隐藏的，当鼠标进入相关区域后，显示当前区域的滚动条，这样做节省了空间，提高了整体观感。如微信的PC版本就是这种风格。实现方式也很简单，就是在鼠标进入和离开目标区域时，显示和隐藏滚动条即可，参考代码如下：
+现代风格的软件中，很多情况下滚动条默认是隐藏的，当鼠标进入相关区域后，显示当前区域的滚动条，这样做节省了空间，提高了整体观感。如微信的PC版本，Github客户端等均为此风格。实现方式也很简单，就是在鼠标进入和离开目标区域时，分别显示和隐藏滚动条即可，参考代码如下：
 
 ```C++
 ui->listWidget->installEventFilter(this);
