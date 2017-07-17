@@ -25,6 +25,7 @@ tags: Index
 
 ## Qt
 * [PImpl机制以及Qt的D-Pointer实现](/cpp-pimpl)
+* [QSS自定义滚动条](/qt-custom-qscrollbar)
 * [Qt中设置透明度](/qt-set-opacity)
 * [Qt中设置程序UAC启动权限](/qt-set-uac)
 * [QDesigner中验证QSS格式是否有效的方法](/qt-validate-style)
