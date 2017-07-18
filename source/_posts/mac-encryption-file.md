@@ -1,35 +1,34 @@
 ---
-title: QDesigner中验证QSS格式是否有效的方法
-date: 2016-12-12 00:00:00
-tags: Qt
+title: Mac下加密文件
+date: 2017-07-18 00:00:00
+tags: Mac
 ---
 
-QDesigner中编辑样式表，如下图所示，可以及时验证所写QSS格式是否正确。这个功能是`QtGui`的内部功能，并未放开。我们可直接包含其头文件，使用其方法。
-
-![](/images/qt/editStyle.png)
+由于`Mac`系统下`Spotlight`工具的强大，我们如若想存储一些隐私文件，不被人所知，有如下两种方法：
+* 单纯的隐藏文件，在`Finder`中看不到，但是`Spotlight`依然可以搜索到。
+* 我们可以制作一个加密的映像文件——`dmg`格式。`dmg`格式相当于`windows`中的`iso`。可以随意拷贝，使用时类似加载光盘的效果。
 
 <!-- more --> 
 
-## 使用QCss::Parser
+## Mac下隐藏文件
 
-使用QCss类相关代码：
-* 方式：可包含`#include <QtGui/5.7.0/QtGui/private/qcssparser_p.h>` 
-* 此法为`QtGui`中方法，正常链接`QT += gui`即可使用.
+* 隐藏文件：`chflags hidden ~/Library`
+* 显示文件 ：`chflags nohidden ~/Library` 
 
-### 节选自QDesigner源码中函数
 
-> 源码位置:` C:\Qt\Qt5.7.0\5.7\Src\qttools\src\designer\src\lib\shared\stylesheeteditor.cpp`
+## 制作dmg映像文件
 
-```C++
-bool StyleSheetEditorDialog::isStyleSheetValid(const QString &styleSheet) {
-	QCss::Parser parser(styleSheet);
-  	QCss::StyleSheet sheet;
-  	if (parser.parse(&sheet))
-  	return true;
-  	QString fullSheet = QStringLiteral("* { ");
-  	fullSheet += styleSheet;
-  	fullSheet += QLatin1Char('}');
-  	QCss::Parser parser2(fullSheet);
-  	return parser2.parse(&sheet);
-}
-```
+* 利用磁盘管理工具新建一磁盘映像。
+  ![](/images/mac/new-dmg.png)
+
+  ​
+
+* 选择待加密的文件夹，随后选择加密方法以及映像格式，映像格式选择读写即可，选择压缩则会压缩文件，读写即是在原来基础上加密，并且可以随时扩展。
+  ![](/images/mac/new-dmg-info.png)
+
+  ​
+
+* 点击存储后，开始制作映像文件，制作完毕后我们会得到一个`dmg`文件。使用时双击此文件，系统则会自动加载，输入密码后可访问加密内容。使用完毕后，去桌面推出此`dmg`光盘即可。
+  ![](/images/mac/new-dmg-complete.png)
+
+  ​
