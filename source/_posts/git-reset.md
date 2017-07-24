@@ -19,7 +19,7 @@ tags: Git
 #回退所有内容到上一个版本 
 git reset HEAD^ 
 
-#回退a.py这个文件的版本到上一个版本 
+#回退test.cpp这个文件的版本到上一个版本 
 git reset HEAD^ test.cpp 
 
 #向前回退到第n个版本 
