@@ -25,6 +25,7 @@ tags: Index
 
 ## Mac
 * [Mac下加密文件](/mac-encryption-file)
+* [Mac系统中截图](/mac-screenshot)
 
 ## Qt
 * [PImpl机制以及Qt的D-Pointer实现](/cpp-pimpl)
