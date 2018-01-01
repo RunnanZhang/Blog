@@ -48,12 +48,14 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  Lebron James: http://www.nba.hupu.com/
+  LoveFy: http://lovefangying.com/
+  My App: http://qt90.com/
   GitHub: https://github.com/RunnanZhang/
   QtBook: http://qtdebug.com/
 
-#是否开启“关于我”。
+#是否开启“关于我”.
 #不开启——
 #aboutme: false
 #开启——
 aboutme: 天之道，损有余而补不足，是故虚胜实，不足胜有余。
+
