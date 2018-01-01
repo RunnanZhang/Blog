@@ -23,6 +23,9 @@ tags: Index
 ## Index
 * [All Documents](/sitemap)
 
+## Linux
+* [Nginx使用以及相关配置](/linux-nginx-config)
+
 ## Mac
 * [Mac下加密文件](/mac-encryption-file)
 * [Mac系统中截图](/mac-screenshot)
