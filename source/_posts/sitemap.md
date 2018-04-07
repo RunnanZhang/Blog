@@ -35,6 +35,7 @@ tags: Index
 * [QSS自定义滚动条](/qt-custom-qscrollbar)
 * [Qt中设置透明度](/qt-set-opacity)
 * [Qt中设置程序UAC启动权限](/qt-set-uac)
+* [Qt中系统相关翻译](/qt-system-translate)
 * [QDesigner中验证QSS格式是否有效的方法](/qt-validate-style)
 * [Windows设置程序开机启动](/windows-auto-start)
 
