@@ -72,5 +72,5 @@ theme: yele
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/RunnanZhang/RunnanZhang.github.io
+  repo: git@github.com:RunnanZhang/RunnanZhang.github.io.git
   branch: master
